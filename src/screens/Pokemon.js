@@ -5,7 +5,7 @@ export default function Pokemon() {
 
 	return (
 	  <View>
-		<Text> textInComponent </Text>
+		<Text> Pokemon </Text>
 	  </View>
 	);
 }
