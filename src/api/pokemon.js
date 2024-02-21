@@ -2,7 +2,7 @@ import { API_HOST } from '@env';
 
 export async function getPokemonApi(){
 	try{
-		var cantidad = 1;
+		var cantidad = 10;
 		const url =  `${API_HOST}/pokemon?limit=${cantidad}&offset=0`;
 		const response = await fetch(url);
 		const result = await response.json();
