@@ -1,5 +1,5 @@
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
-import {Image} from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { Image } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 import PokedexNavigation from "./PokedexNavigation";
@@ -10,18 +10,18 @@ import Account from "../screens/Account";
 
 const Tab = createBottomTabNavigator();
 
-export default function Navigation(){
-	return(
+export default function Navigation() {
+	return (
 		<Tab.Navigator>
 			<Tab.Screen name="Favorite" component={Favorite} options=
-			{{ 
-				tabBarLabel: "Favoritos", 
-				tabBarBadge: 3, 
-				tabBarIcon: ({color, size}) => ( 
-					<Icon name="heart" color= {color} size={size}/> 
-					), 
-				headerTitle: "Favoritos"
-			}} />
+				{{
+					tabBarLabel: "Favoritos",
+					tabBarBadge: 3,
+					tabBarIcon: ({ color, size }) => (
+						<Icon name="heart" color={color} size={size} />
+					),
+					headerTitle: "Favoritos"
+				}} />
 
 			{/* <Tab.Screen name="Pokedex" component={Pokedex} options=
 			{{ 
@@ -31,19 +31,20 @@ export default function Navigation(){
 				}}/> */}
 
 			<Tab.Screen name="Pokedex" component={PokedexNavigation} options=
-			{{ 
-				tabBarLabel: "",  
-			 	tabBarIcon: () => renderPokeball(), 
-			}}/>
+				{{
+					tabBarLabel: "",
+					tabBarIcon: () => renderPokeball(),
+					title: "",
+				}} />
 
 			<Tab.Screen name="Account" component={Account} options=
-			{{ 
-				tabBarLabel: "Mi Cuenta",  
-				tabBarIcon: ({color, size}) => ( 
-					<Icon name="user" color= {color} size={size}/> 
+				{{
+					tabBarLabel: "Mi Cuenta",
+					tabBarIcon: ({ color, size }) => (
+						<Icon name="user" color={color} size={size} />
 					),
-				headerTitle: "Mi cuenta" 
-			}}/>
+					headerTitle: "Mi cuenta"
+				}} />
 		</Tab.Navigator>
 
 	);
@@ -51,10 +52,10 @@ export default function Navigation(){
 
 function renderPokeball() {
 	return (
-	  <Image
-		source={require("../assets/pokeball.png")}
-		style={{ width: 35, height: 35, top: 5 }}
-	  />
+		<Image
+			source={require("../assets/pokeball.png")}
+			style={{ width: 35, height: 35, top: 5 }}
+		/>
 	);
 }
 
