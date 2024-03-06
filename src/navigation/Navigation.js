@@ -34,6 +34,10 @@ export default function Navigation() {
 				{{
 					tabBarLabel: "",
 					tabBarIcon: () => renderPokeball(),
+					title: "",
+					headerShown: true,
+					headerTransparent: true,
+					headerShadowVisible: false
 				}} />
 
 			<Tab.Screen name="Account" component={Account} options=
