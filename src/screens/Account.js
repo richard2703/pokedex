@@ -1,19 +1,12 @@
-import { Text, View, SafeAreaView } from 'react-native';
-import { API_HOST } from '@env';
-import { useEffect, useState } from 'react';
-import {getUsers} from '../api/pokemon'
+import React from "react";
+import { View, Text } from "react-native";
+import LoginForm from "../components/Auth/LoginForm";
+import UserData from "../components/Auth/UserData";
+import useAuth from "../hooks/useAuth";
 
+export default function Account() {
+	const { auth } = useAuth();
+	console.log(auth);
 
-export default function Account(){
-		// getPokemonApi()
-		// .then((res) => console.log("res", res))
-		// .catch((e) => console.log(e));
-		getUsers()
-			.then((res) => console.log("res", res))
-			.catch((e) => console.log(e));
-	return (	
-		<SafeAreaView>
-			<Text> Cuenta</Text>
-		</SafeAreaView>
-	);
+	return <View>{auth ? <UserData auth={auth} /> : <LoginForm />}</View>;
 }
