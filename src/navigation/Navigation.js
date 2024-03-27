@@ -20,7 +20,7 @@ export default function Navigation() {
 					tabBarIcon: ({ color, size }) => (
 						<Icon name="heart" color={color} size={size} />
 					),
-					headerTitle: "Favoritos"
+					// headerTitle: "Favoritos"
 				}} />
 
 			{/* <Tab.Screen name="Pokedex" component={Pokedex} options=
@@ -34,10 +34,12 @@ export default function Navigation() {
 				{{
 					tabBarLabel: "",
 					tabBarIcon: () => renderPokeball(),
-					title: "",
-					headerShown: true,
-					headerTransparent: true,
-					headerShadowVisible: false
+					// title: "",
+					// headerShown: true,
+					// headerTransparent: true,
+					// headerShadowVisible: false
+					headerShown: false
+
 				}} />
 
 			<Tab.Screen name="Account" component={Account} options=
@@ -46,7 +48,7 @@ export default function Navigation() {
 					tabBarIcon: ({ color, size }) => (
 						<Icon name="user" color={color} size={size} />
 					),
-					headerTitle: "Mi cuenta"
+					// headerTitle: "Mi cuenta"
 				}} />
 		</Tab.Navigator>
 
