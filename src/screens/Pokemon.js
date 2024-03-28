@@ -16,7 +16,7 @@ export default function Pokemon(props) {
 
 	useEffect(() => {
 		navigation.setOptions({
-			headerRight: () => (auth ? <Favorite id={pokemon.id} /> : null),
+			headerRight: () => (auth ? <Favorite id={pokemon?.id} /> : null),
 			// headerRight: () => (<Favorite id={pokemon.id} />),
 
 			headerLeft: () => (
