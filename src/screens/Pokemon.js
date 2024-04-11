@@ -16,7 +16,9 @@ export default function Pokemon(props) {
 
 	useEffect(() => {
 		navigation.setOptions({
-			headerRight: () => (auth ? <Favorite id={pokemon?.id} /> : null),
+			// headerRight: () => (auth ? <Favorite id={pokemon?.id} /> : null),
+			headerRight: () => (auth ? <Favorite id={params.id} /> : null),
+
 			// headerRight: () => (<Favorite id={pokemon.id} />),
 
 			headerLeft: () => (
@@ -35,7 +37,8 @@ export default function Pokemon(props) {
 		(async () => {
 			try {
 				const response = await getPokemonDetailsApi(params.id);
-				// console.log(JSON.stringify(response, null, 2));
+				// console.log();
+				// console.log(JSON.stringify(params.id, null, 2));
 				setPokemon(response);
 			} catch (error) {
 				console.error(error);
