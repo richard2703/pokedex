@@ -6,7 +6,8 @@ export async function getPokemonsFavoriteApi() {
 	try {
 		const response = await AsyncStorage.getItem(FAVORITE_STORAGE);
 		// console.log(response);
-		return response;
+		// return response;
+		return JSON.parse(response || '[]');
 	} catch (error) {
 		throw error;
 	}
@@ -14,13 +15,11 @@ export async function getPokemonsFavoriteApi() {
 
 export async function addPokemonFavoriteApi(id) {
 	try {
-		const favorites = [];
+		const favorites = await getPokemonsFavoriteApi();
 		// console.log(id);
 		favorites.push(id);
 		//Se guarda como un string
 		await AsyncStorage.setItem(FAVORITE_STORAGE, JSON.stringify(favorites));
-		// Probar si se guarda completo
-		// await AsyncStorage.setItem(FAVORITE_STORAGE, favorites);
 
 	} catch (error) {
 		throw error;
